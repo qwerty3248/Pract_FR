@@ -1,0 +1,25 @@
+La mascara de red es muy importante.(/24 que va detras de la ip de nuestros dispositivos)
+1- importar las maquinas del profesor 
+
+
+(antes de hacer nada cambio el nombre del host a los pc para que no tenga le mismo nombre) hostname <nombre>
+A la hora de clonar lo que hace la completa es copiar la maquina tal cual, la enlazada ocupa mucho menos pero si se pierde la maquina original pierdo la que esta enlazada.
+Para estas practicas se debe poner un adaptador con red interna porque se van a comunicar con los de la red interna mismamente tiene que ser la misma red interna
+la contraseña de los pcs es finisterre y el usuario es administrador y la del router es admin el usuario sin contraseña
+ahora vamos a configurar las maquinas, para ponerlo en modo superusuario ponemos sudo su y la contraseña del pc
+con ifconfig <nombre de la maquina(enp0s3)> <ip nueva> netmask <mascara> (el /24 es lo mismo 255.255.255.0)
+netplan apply para aplicarlo despues de cambiar eso y el archivo de abajo
+Para hacer fijo este cambio se cambia el archivo /etc/netplan/<tab>
+en el router ponemos ip y luego address y hay esta todo
+sudo netplan apply despues para aplciarlo o sin el sudo
+luego de estar alli tenemos que add address <el ping del router> interface <ether1, "el nombre del router">
+con print puedes ver si el router esta bien.
+y con ping <ip> podemos ver si estamos conectados
+tenemos wingbox en los pc en Desktop/Software y lo podemos abrir en segundo plano de esta forma: wine winbox.exe
+
+para apagar el router nos vamos al directorio raiz, en system y shutdown
+
+para mandar paquetes cuando estan conectados entre si con ping <ip> y para conectar de una a otra telnet <ip>
+
+
+
